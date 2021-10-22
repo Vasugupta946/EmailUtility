@@ -30,7 +30,7 @@ namespace EmailUtility
                 instance.Model = model;
             });
 
-            MailMessage mm = new()
+            using MailMessage mm = new()
             {
                 Subject = model.Subject,
                 IsBodyHtml = true,
@@ -43,7 +43,7 @@ namespace EmailUtility
 
             mm.To.Add(model.ToEmailAddress);
             mm.From = new MailAddress("from@domain.com");
-            var smtpClient = new SmtpClient
+            using SmtpClient smtpClient = new() 
             {
                 Host = "smtpServer.domain.com",
                 UseDefaultCredentials = true,
@@ -86,7 +86,7 @@ namespace EmailUtility
                     ToEmailAddress = "to@domain.com",
                     RepoName = "EmailUtility"
                 };
-                TextReader tr = new StreamReader(inputFile);
+                using TextReader tr = new StreamReader(inputFile);
                 while ((line = tr.ReadLine()) != null)
                 {
                     if (line.Length > 0)
