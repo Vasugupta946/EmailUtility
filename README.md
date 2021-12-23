@@ -11,4 +11,4 @@ Logging has been added using dependency injection.
 In Logging, there are 2 appenders, first is for logging everything into the log files while other is for sending emails on error. 
 <br />
 <br />
-Please note- Templates are not html safe by safe but you can use this [link](https://github.com/adoconnection/RazorEngineCore/wiki/@Raw) to make them.
+Please note- Templates are not html safe by default but you can use this [link](https://github.com/adoconnection/RazorEngineCore/wiki/@Raw) to make them.
